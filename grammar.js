@@ -8,30 +8,30 @@ module.exports = grammar({
 
     cycle: ($) =>
       seq(
-        $.first,
+        $.text,
         ",",
-        $.second,
+        $.string,
         ",",
-        $.third,
+        $.integer,
         ",",
-        $.fourth,
+        $.boolean,
         ",",
-        $.fifth,
+        $.float,
         ",",
-        $.sixth,
+        $.null,
         optional(","),
       ),
 
-    first: ($) => /[^,\n\r]+/,
+    text: ($) => /[^,\n\r]+/,
 
-    second: ($) => /[^,\n\r]+/,
+    string: ($) => /[^,\n\r]+/,
 
-    third: ($) => /[^,\n\r]+/,
+    integer: ($) => /[^,\n\r]+/,
 
-    fourth: ($) => /[^,\n\r]+/,
+    boolean: ($) => /[^,\n\r]+/,
 
-    fifth: ($) => /[^,\n\r]+/,
+    float: ($) => /[^,\n\r]+/,
 
-    sixth: ($) => /[^,\n\r]+/,
+    null: ($) => /[^,\n\r]+/,
   },
 });
