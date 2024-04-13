@@ -6,12 +6,12 @@ module.exports = grammar({
 
     row: ($) => seq(repeat($.cycle), "\n"),
 
-    cycle: ($) => seq($.first, ",", $.second, ",", $.third, optional(",")),
+    cycle: ($) => seq($.variable, ",", $.string, ",", $.type, optional(",")),
 
-    first: ($) => /[^,\n\r]+/,
+    variable: ($) => /[^,\n\r]+/,
 
-    second: ($) => /[^,\n\r]+/,
+    string: ($) => /[^,\n\r]+/,
 
-    third: ($) => /[^,\n\r]+/,
+    type: ($) => /[^,\n\r]+/,
   },
 });
