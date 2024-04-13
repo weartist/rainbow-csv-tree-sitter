@@ -1,5 +1,10 @@
 [
   {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "cycle",
     "named": true,
     "fields": {},
@@ -8,19 +13,28 @@
       "required": true,
       "types": [
         {
-          "type": "string",
+          "type": "boolean",
           "named": true
         },
         {
-          "type": "type",
+          "type": "ele",
           "named": true
         },
         {
-          "type": "variable",
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "text",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "ele",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "file",
@@ -38,6 +52,11 @@
     }
   },
   {
+    "type": "number",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "row",
     "named": true,
     "fields": {},
@@ -53,17 +72,7 @@
     }
   },
   {
-    "type": "string",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "type",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "variable",
+    "type": "text",
     "named": true,
     "fields": {}
   },

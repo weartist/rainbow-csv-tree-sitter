@@ -29,7 +29,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "variable"
+          "name": "text"
         },
         {
           "type": "STRING",
@@ -37,7 +37,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "string"
+          "name": "number"
         },
         {
           "type": "STRING",
@@ -45,7 +45,15 @@
         },
         {
           "type": "SYMBOL",
-          "name": "type"
+          "name": "ele"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "boolean"
         },
         {
           "type": "CHOICE",
@@ -61,15 +69,19 @@
         }
       ]
     },
-    "variable": {
+    "text": {
       "type": "PATTERN",
       "value": "[^,\\n\\r]+"
     },
-    "string": {
+    "number": {
       "type": "PATTERN",
       "value": "[^,\\n\\r]+"
     },
-    "type": {
+    "ele": {
+      "type": "PATTERN",
+      "value": "[^,\\n\\r]+"
+    },
+    "boolean": {
       "type": "PATTERN",
       "value": "[^,\\n\\r]+"
     }
