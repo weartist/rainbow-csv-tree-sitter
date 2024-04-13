@@ -1,10 +1,10 @@
 [package]
-name = "tree-sitter-YOUR-LANGUAGE-NAME"
-description = "YOUR-LANGUAGE-NAME grammar for the tree-sitter parsing library"
+name = "tree-sitter-rainbow-csv"
+description = "for zed rainbow csv"
 version = "0.0.1"
-keywords = ["incremental", "parsing", "YOUR-LANGUAGE-NAME"]
+keywords = ["incremental", "parsing", "rainbow csv"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-YOUR-LANGUAGE-NAME"
+repository = "https://github.com/weartist/rainbow-csv-tree-sitter"
 edition = "2018"
 license = "MIT"
 
