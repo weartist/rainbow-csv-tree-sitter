@@ -8,15 +8,15 @@
       "required": true,
       "types": [
         {
-          "type": "float",
+          "type": "string",
           "named": true
         },
         {
-          "type": "number",
+          "type": "type",
           "named": true
         },
         {
-          "type": "text",
+          "type": "variable",
           "named": true
         }
       ]
@@ -38,16 +38,6 @@
     }
   },
   {
-    "type": "float",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "number",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "row",
     "named": true,
     "fields": {},
@@ -63,7 +53,17 @@
     }
   },
   {
-    "type": "text",
+    "type": "string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "type",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "variable",
     "named": true,
     "fields": {}
   },

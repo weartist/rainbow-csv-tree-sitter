@@ -29,7 +29,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "text"
+          "name": "variable"
         },
         {
           "type": "STRING",
@@ -37,7 +37,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "number"
+          "name": "string"
         },
         {
           "type": "STRING",
@@ -45,7 +45,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "float"
+          "name": "type"
         },
         {
           "type": "CHOICE",
@@ -61,15 +61,15 @@
         }
       ]
     },
-    "text": {
+    "variable": {
       "type": "PATTERN",
       "value": "[^,\\n\\r]+"
     },
-    "number": {
+    "string": {
       "type": "PATTERN",
       "value": "[^,\\n\\r]+"
     },
-    "float": {
+    "type": {
       "type": "PATTERN",
       "value": "[^,\\n\\r]+"
     }
