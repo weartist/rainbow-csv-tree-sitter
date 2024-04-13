@@ -17,24 +17,19 @@
           "named": true
         },
         {
-          "type": "ele",
+          "type": "first",
           "named": true
         },
         {
-          "type": "number",
+          "type": "second",
           "named": true
         },
         {
-          "type": "text",
+          "type": "third",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "ele",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "file",
@@ -52,7 +47,7 @@
     }
   },
   {
-    "type": "number",
+    "type": "first",
     "named": true,
     "fields": {}
   },
@@ -72,7 +67,12 @@
     }
   },
   {
-    "type": "text",
+    "type": "second",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "third",
     "named": true,
     "fields": {}
   },
