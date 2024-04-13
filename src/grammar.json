@@ -1,7 +1,7 @@
 {
   "name": "csv",
   "rules": {
-    "file": {
+    "csv": {
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
@@ -14,8 +14,25 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "SYMBOL",
-            "name": "cycle"
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "cycle4"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "cycle3"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "cycle2"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "cycle"
+              }
+            ]
           }
         },
         {
@@ -25,6 +42,57 @@
       ]
     },
     "cycle": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "first"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "second"
+        }
+      ]
+    },
+    "cycle2": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "first"
+        }
+      ]
+    },
+    "cycle3": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "first"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "second"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "third"
+        }
+      ]
+    },
+    "cycle4": {
       "type": "SEQ",
       "members": [
         {
@@ -49,21 +117,56 @@
         },
         {
           "type": "STRING",
-          "value": ","
-        },
+          "value": "，"
+        }
+      ]
+    },
+    "remainder": {
+      "type": "CHOICE",
+      "members": [
         {
           "type": "SYMBOL",
-          "name": "boolean"
+          "name": "first"
         },
         {
-          "type": "CHOICE",
+          "type": "SEQ",
           "members": [
+            {
+              "type": "SYMBOL",
+              "name": "first"
+            },
             {
               "type": "STRING",
               "value": ","
             },
             {
-              "type": "BLANK"
+              "type": "SYMBOL",
+              "name": "second"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "first"
+            },
+            {
+              "type": "STRING",
+              "value": ","
+            },
+            {
+              "type": "SYMBOL",
+              "name": "second"
+            },
+            {
+              "type": "STRING",
+              "value": ","
+            },
+            {
+              "type": "SYMBOL",
+              "name": "third"
             }
           ]
         }
@@ -78,10 +181,6 @@
       "value": "[^,\\n\\r]+"
     },
     "third": {
-      "type": "PATTERN",
-      "value": "[^,\\n\\r]+"
-    },
-    "boolean": {
       "type": "PATTERN",
       "value": "[^,\\n\\r]+"
     }

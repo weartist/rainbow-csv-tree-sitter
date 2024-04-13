@@ -1,8 +1,18 @@
 [
   {
-    "type": "boolean",
+    "type": "csv",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "row",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "cycle",
@@ -13,9 +23,39 @@
       "required": true,
       "types": [
         {
-          "type": "boolean",
+          "type": "first",
           "named": true
         },
+        {
+          "type": "second",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cycle2",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "first",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "cycle3",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
         {
           "type": "first",
           "named": true
@@ -32,15 +72,23 @@
     }
   },
   {
-    "type": "file",
+    "type": "cycle4",
     "named": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
-          "type": "row",
+          "type": "first",
+          "named": true
+        },
+        {
+          "type": "second",
+          "named": true
+        },
+        {
+          "type": "third",
           "named": true
         }
       ]
@@ -62,6 +110,18 @@
         {
           "type": "cycle",
           "named": true
+        },
+        {
+          "type": "cycle2",
+          "named": true
+        },
+        {
+          "type": "cycle3",
+          "named": true
+        },
+        {
+          "type": "cycle4",
+          "named": true
         }
       ]
     }
@@ -82,6 +142,10 @@
   },
   {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "，",
     "named": false
   }
 ]
