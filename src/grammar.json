@@ -18,6 +18,14 @@
             "members": [
               {
                 "type": "SYMBOL",
+                "name": "cycle6"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "cycle5"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "cycle4"
               },
               {
@@ -36,12 +44,25 @@
           }
         },
         {
+          "type": "SYMBOL",
+          "name": "remainder"
+        },
+        {
           "type": "STRING",
           "value": "\n"
         }
       ]
     },
     "cycle": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "first"
+        }
+      ]
+    },
+    "cycle2": {
       "type": "SEQ",
       "members": [
         {
@@ -55,15 +76,6 @@
         {
           "type": "SYMBOL",
           "name": "second"
-        }
-      ]
-    },
-    "cycle2": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "first"
         }
       ]
     },
@@ -117,7 +129,101 @@
         },
         {
           "type": "STRING",
-          "value": "，"
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fourth"
+        }
+      ]
+    },
+    "cycle5": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "first"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "second"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "third"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fourth"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fifth"
+        }
+      ]
+    },
+    "cycle6": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "first"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "second"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "third"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fourth"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "fifth"
+        },
+        {
+          "type": "STRING",
+          "value": ","
+        },
+        {
+          "type": "SYMBOL",
+          "name": "sixth"
         }
       ]
     },
@@ -173,16 +279,82 @@
       ]
     },
     "first": {
-      "type": "PATTERN",
-      "value": "[^,\\n\\r]+"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\"[^\"]*\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^,\\n\\r]+"
+        }
+      ]
     },
     "second": {
-      "type": "PATTERN",
-      "value": "[^,\\n\\r]+"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\"[^\"]*\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^,\\n\\r]+"
+        }
+      ]
     },
     "third": {
-      "type": "PATTERN",
-      "value": "[^,\\n\\r]+"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\"[^\"]*\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^,\\n\\r]+"
+        }
+      ]
+    },
+    "fourth": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\"[^\"]*\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^,\\n\\r]+"
+        }
+      ]
+    },
+    "fifth": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\"[^\"]*\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^,\\n\\r]+"
+        }
+      ]
+    },
+    "sixth": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "\"[^\"]*\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^,\\n\\r]+"
+        }
+      ]
     }
   },
   "extras": [
