@@ -165,6 +165,45 @@
     }
   },
   {
+    "type": "cycle7",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "fifth",
+          "named": true
+        },
+        {
+          "type": "first",
+          "named": true
+        },
+        {
+          "type": "fourth",
+          "named": true
+        },
+        {
+          "type": "second",
+          "named": true
+        },
+        {
+          "type": "seventh",
+          "named": true
+        },
+        {
+          "type": "sixth",
+          "named": true
+        },
+        {
+          "type": "third",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "fifth",
     "named": true,
     "fields": {}
@@ -188,11 +227,27 @@
       "required": true,
       "types": [
         {
+          "type": "fifth",
+          "named": true
+        },
+        {
           "type": "first",
           "named": true
         },
         {
+          "type": "fourth",
+          "named": true
+        },
+        {
           "type": "second",
+          "named": true
+        },
+        {
+          "type": "seventh",
+          "named": true
+        },
+        {
+          "type": "sixth",
           "named": true
         },
         {
@@ -235,6 +290,10 @@
           "named": true
         },
         {
+          "type": "cycle7",
+          "named": true
+        },
+        {
           "type": "remainder",
           "named": true
         }
@@ -243,6 +302,11 @@
   },
   {
     "type": "second",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "seventh",
     "named": true,
     "fields": {}
   },

@@ -7,7 +7,15 @@ module.exports = grammar({
     row: ($) =>
       seq(
         repeat(
-          choice($.cycle6, $.cycle5, $.cycle4, $.cycle3, $.cycle2, $.cycle),
+          choice(
+            $.cycle7,
+            $.cycle6,
+            $.cycle5,
+            $.cycle4,
+            $.cycle3,
+            $.cycle2,
+            $.cycle,
+          ),
         ),
         $.remainder,
         "\n",
@@ -33,12 +41,58 @@ module.exports = grammar({
         ",",
         $.sixth,
       ),
+    cycle7: ($) =>
+      seq(
+        $.first,
+        ",",
+        $.second,
+        ",",
+        $.third,
+        ",",
+        $.fourth,
+        ",",
+        $.fifth,
+        ",",
+        $.sixth,
+        ",",
+        $.seventh,
+      ),
 
     remainder: ($) =>
       choice(
         $.first,
         seq($.first, ",", $.second),
         seq($.first, ",", $.second, ",", $.third),
+        seq($.first, ",", $.second, ",", $.third, ",", $.fourth),
+        seq($.first, ",", $.second, ",", $.third, ",", $.fourth, ",", $.fifth),
+        seq(
+          $.first,
+          ",",
+          $.second,
+          ",",
+          $.third,
+          ",",
+          $.fourth,
+          ",",
+          $.fifth,
+          ",",
+          $.sixth,
+        ),
+        seq(
+          $.first,
+          ",",
+          $.second,
+          ",",
+          $.third,
+          ",",
+          $.fourth,
+          ",",
+          $.fifth,
+          ",",
+          $.sixth,
+          ",",
+          $.seventh,
+        ),
       ),
 
     // first, second, third的定义
@@ -48,5 +102,6 @@ module.exports = grammar({
     fourth: ($) => choice(/"[^"]*"/, /[^,\n\r]+/),
     fifth: ($) => choice(/"[^"]*"/, /[^,\n\r]+/),
     sixth: ($) => choice(/"[^"]*"/, /[^,\n\r]+/),
+    seventh: ($) => choice(/"[^"]*"/, /[^,\n\r]+/),
   },
 });
