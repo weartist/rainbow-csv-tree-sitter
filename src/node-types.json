@@ -321,11 +321,11 @@
     "fields": {}
   },
   {
-    "type": "\n",
+    "type": "\t",
     "named": false
   },
   {
-    "type": ",",
+    "type": "\n",
     "named": false
   }
 ]
