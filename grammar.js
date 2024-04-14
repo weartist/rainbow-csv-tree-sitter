@@ -116,12 +116,12 @@ module.exports = grammar({
       ),
 
     // first, second, third的定义
-    first: ($) => choice(/"[^"]*"/, /[^(\n\r\t)]+/),
-    second: ($) => choice(/"[^"]*"/, /[^(\n\r\t)]+/),
-    third: ($) => choice(/"[^"]*"/, /[^(\n\r\t)]+/),
-    fourth: ($) => choice(/"[^"]*"/, /[^(\n\r\t)]+/),
-    fifth: ($) => choice(/"[^"]*"/, /[^(\n\r\t)]+/),
-    sixth: ($) => choice(/"[^"]*"/, /[^(\n\r\t)]+/),
-    seventh: ($) => choice(/"[^"]*"/, /[^(\n\r\t)]+/),
+    first: ($) => choice(/"[^"]*"/, /[^\n\r\t]+/),
+    second: ($) => choice(/"[^"]*"/, /[^\n\r\t]+/),
+    third: ($) => choice(/"[^"]*"/, /[^\n\r\t]+/),
+    fourth: ($) => choice(/"[^"]*"/, /[^\n\r\t]+/),
+    fifth: ($) => choice(/"[^"]*"/, /[^\n\r\t]+/),
+    sixth: ($) => choice(/"[^"]*"/, /[^\n\r\t]+/),
+    seventh: ($) => choice(/"[^"]*"/, /[^\n\r\t]+/),
   },
 });
