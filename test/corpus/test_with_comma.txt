@@ -1,0 +1,35 @@
+==================
+Test with comma
+==================
+
+1,"Apple, Microsoft",Google,3,-213.25,38.94,Meta & Instagram,0.8
+2,"Music",Dance,999,0,111.111,Simon & Garfunkel,0.00001
+
+
+---
+
+(csv
+    (row
+    (cycle7
+        (first)
+        (second)
+        (third)
+        (fourth)
+        (fifth)
+        (sixth)
+        (seventh))
+    (ERROR)
+    (remainder
+        (first)))
+    (row
+    (cycle7
+        (first)
+        (second)
+        (third)
+        (fourth)
+        (fifth)
+        (sixth)
+        (seventh))
+    (ERROR)
+    (remainder
+        (first))))
