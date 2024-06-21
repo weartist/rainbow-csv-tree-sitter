@@ -145,13 +145,13 @@ module.exports = grammar({
         ),
       ),
 
-    // first, second, third的定义
-    first: ($) => choice(/"[^"]*"/, /[^,;\n\r]+/),
-    second: ($) => choice(/"[^"]*"/, /[^,;\n\r]+/),
-    third: ($) => choice(/"[^"]*"/, /[^,;\n\r]+/),
-    fourth: ($) => choice(/"[^"]*"/, /[^,;\n\r]+/),
-    fifth: ($) => choice(/"[^"]*"/, /[^,;\n\r]+/),
-    sixth: ($) => choice(/"[^"]*"/, /[^,;\n\r]+/),
-    seventh: ($) => choice(/"[^"]*"/, /[^,;\n\r]+/),
+    // first, second, third and other define
+    first: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
+    second: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
+    third: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
+    fourth: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
+    fifth: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
+    sixth: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
+    seventh: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
   },
 });
