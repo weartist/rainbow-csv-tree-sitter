@@ -1,35 +1,34 @@
 ==================
 Test with comma
 ==================
-
-1,"Apple, Microsoft",Google,3,-213.25,38.94,Meta & Instagram,0.8
-2,"Music",Dance,999,0,111.111,Simon & Garfunkel,0.00001
+1,"Apple, Microsoft",Google,3,-213.25,,Meta & Instagram,0.8
+2,"Music",Dance,999,0,,Simon & Garfunkel,0.00001
+,"Music",Dub,500,0,,Chat & Fob,0.7
 
 
 ---
 
 (csv
     (row
-    (cycle7
-        (first)
-        (second)
-        (third)
-        (fourth)
-        (fifth)
-        (sixth)
-        (seventh))
-    (ERROR)
-    (remainder
-        (first)))
+        (first (number))
+        (second (text))
+        (third (text))
+        (fourth (number))
+        (fifth (float))
+        (seventh (text))
+        (first (float)))
     (row
-    (cycle7
-        (first)
-        (second)
-        (third)
-        (fourth)
-        (fifth)
-        (sixth)
-        (seventh))
-    (ERROR)
-    (remainder
-        (first))))
+        (first (number))
+        (second (text))
+        (third (text))
+        (fourth (number))
+        (fifth (number))
+        (seventh (text))
+        (first (float)))
+    (row
+        (second (text))
+        (third (text))
+        (fourth (number))
+        (fifth (number))
+        (seventh (text))
+        (first (float))))
