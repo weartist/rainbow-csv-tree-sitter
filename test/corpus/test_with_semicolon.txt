@@ -1,6 +1,6 @@
-==================
-Test with comma
-==================
+===================
+Test with semicolon
+===================
 1;"Apple; Microsoft";Google;3;-213.25;;Meta & Instagram;0.8
 2;"Music";Dance;999;0;;Simon & Garfunkel;0.00001
 ;"Music";Dub;500;0;;Chat & Fob;0.7
