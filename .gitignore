@@ -21,3 +21,8 @@ package-lock.json
 .DS_Store
 .DS_Store?
 
+# Compiler and linker outputs
+*.obj
+*.lib
+*.exp
+
