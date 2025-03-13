@@ -1,157 +1,74 @@
+let rules_for_sep = (sep, sym) => {
+  let r = {};
+  r[`_csv${sym}`] = ($) => repeat1(alias($[`row${sym}`], $.row));
+  r[`row${sym}`] = ($) =>
+    seq(
+      repeat(seq($[`_cycle7${sym}`], sep)),
+      optional($[`_remainder${sym}`]),
+      "\n",
+    );
+
+  r[`_cycle7${sym}`] = ($) =>
+    seq(
+      optional(alias($[`field${sym}`], $.first)),
+      sep,
+      optional(alias($[`field${sym}`], $.second)),
+      sep,
+      optional(alias($[`field${sym}`], $.third)),
+      sep,
+      optional(alias($[`field${sym}`], $.fourth)),
+      sep,
+      optional(alias($[`field${sym}`], $.fifth)),
+      sep,
+      optional(alias($[`field${sym}`], $.sixth)),
+      sep,
+      optional(alias($[`field${sym}`], $.seventh)),
+    );
+  r[`_remainder${sym}`] = ($) =>
+    seq(
+      alias($[`field${sym}`], $.first),
+      ...[$.seventh, $.sixth, $.fifth, $.fourth, $.third, $.second].reduce(
+        (accum, fld) => [
+          optional(seq(sep, optional(alias($[`field${sym}`], fld)), ...accum)),
+        ],
+        [],
+      ),
+    );
+
+  r[`field${sym}`] = ($) =>
+    choice(
+      prec(3, $.boolean),
+      prec(2, $.number),
+      prec(1, $.float),
+      prec(0, alias($[`text${sym}`], $.text)),
+    );
+  r[`text${sym}`] = (_) =>
+    token(
+      choice(
+        new RegExp(`[^-+${sep}\\d\\s"][^${sep}\\n\\r"]+`),
+        seq('"', repeat(choice(/[^"]/, '""')), '"'),
+      ),
+    );
+  return r;
+};
+
 module.exports = grammar({
   name: "csv",
 
   rules: {
-    csv: ($) => repeat($.row),
+    csv: ($) => choice($._csvc, $._csvs, $._csvp),
 
-    row: ($) =>
-      seq(
-        repeat(
-          choice(
-            $.cycle7,
-            $.cycle6,
-            $.cycle5,
-            $.cycle4,
-            $.cycle3,
-            $.cycle2,
-            $.cycle,
-          ),
-        ),
-        $.remainder,
-        "\n",
-      ),
+    ...rules_for_sep(",", "c"),
+    ...rules_for_sep(";", "s"),
+    ...rules_for_sep("|", "p"),
 
-    cycle: ($) => seq($.first),
-    cycle2: ($) => seq($.first, choice(",", ";", "|"), $.second),
-    cycle3: ($) =>
-      seq(
-        $.first,
-        choice(",", ";", "|"),
-        $.second,
-        choice(",", ";", "|"),
-        $.third,
-      ),
-    cycle4: ($) =>
-      seq(
-        $.first,
-        choice(",", ";", "|"),
-        $.second,
-        choice(",", ";", "|"),
-        $.third,
-        choice(",", ";", "|"),
-        $.fourth,
-      ),
-    cycle5: ($) =>
-      seq(
-        $.first,
-        choice(",", ";", "|"),
-        $.second,
-        choice(",", ";", "|"),
-        $.third,
-        choice(",", ";", "|"),
-        $.fourth,
-        choice(",", ";", "|"),
-        $.fifth,
-      ),
-    cycle6: ($) =>
-      seq(
-        $.first,
-        choice(",", ";", "|"),
-        $.second,
-        choice(",", ";", "|"),
-        $.third,
-        choice(",", ";", "|"),
-        $.fourth,
-        choice(",", ";", "|"),
-        $.fifth,
-        choice(",", ";", "|"),
-        $.sixth,
-      ),
-    cycle7: ($) =>
-      seq(
-        $.first,
-        choice(",", ";", "|"),
-        $.second,
-        choice(",", ";", "|"),
-        $.third,
-        choice(",", ";", "|"),
-        $.fourth,
-        choice(",", ";", "|"),
-        $.fifth,
-        choice(",", ";", "|"),
-        $.sixth,
-        choice(",", ";", "|"),
-        $.seventh,
-      ),
-
-    remainder: ($) =>
-      choice(
-        $.first,
-        seq($.first, choice(",", ";", "|"), $.second),
-        seq(
-          $.first,
-          choice(",", ";", "|"),
-          $.second,
-          choice(",", ";", "|"),
-          $.third,
-        ),
-        seq(
-          $.first,
-          choice(",", ";", "|"),
-          $.second,
-          choice(",", ";", "|"),
-          $.third,
-          choice(",", ";", "|"),
-          $.fourth,
-        ),
-        seq(
-          $.first,
-          choice(",", ";", "|"),
-          $.second,
-          choice(",", ";", "|"),
-          $.third,
-          choice(",", ";", "|"),
-          $.fourth,
-          choice(",", ";", "|"),
-          $.fifth,
-        ),
-        seq(
-          $.first,
-          choice(",", ";", "|"),
-          $.second,
-          choice(",", ";", "|"),
-          $.third,
-          choice(",", ";", "|"),
-          $.fourth,
-          choice(",", ";", "|"),
-          $.fifth,
-          choice(",", ";", "|"),
-          $.sixth,
-        ),
-        seq(
-          $.first,
-          choice(",", ";", "|"),
-          $.second,
-          choice(",", ";", "|"),
-          $.third,
-          choice(",", ";", "|"),
-          $.fourth,
-          choice(",", ";", "|"),
-          $.fifth,
-          choice(",", ";", "|"),
-          $.sixth,
-          choice(",", ";", "|"),
-          $.seventh,
-        ),
-      ),
-
-    // first, second, third and other define
-    first: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
-    second: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
-    third: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
-    fourth: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
-    fifth: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
-    sixth: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
-    seventh: ($) => choice(/"[^"]*"/, /[^,;|\n\r]+/),
+    number: (_) => choice(/[-+]?\d+/, /0[xX][0-9a-fA-F]+/),
+    float: (_) => choice(/\d*\.\d+/, /[-+]?\d+\.\d*/),
+    boolean: (_) => choice("true", "false"),
   },
+
+  conflicts: ($) => [
+    [$.rowc, $.rows, $.rowp],
+    [$.fieldc, $.fields, $.fieldp],
+  ],
 });
