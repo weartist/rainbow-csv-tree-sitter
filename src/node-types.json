@@ -1,12 +1,17 @@
 [
   {
+    "type": "boolean",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "csv",
     "named": true,
     "root": true,
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "row",
@@ -16,7 +21,7 @@
     }
   },
   {
-    "type": "cycle",
+    "type": "fifth",
     "named": true,
     "fields": {},
     "children": {
@@ -24,239 +29,87 @@
       "required": true,
       "types": [
         {
-          "type": "first",
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "text",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "cycle2",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "first",
-          "named": true
-        },
-        {
-          "type": "second",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "cycle3",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "first",
-          "named": true
-        },
-        {
-          "type": "second",
-          "named": true
-        },
-        {
-          "type": "third",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "cycle4",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "first",
-          "named": true
-        },
-        {
-          "type": "fourth",
-          "named": true
-        },
-        {
-          "type": "second",
-          "named": true
-        },
-        {
-          "type": "third",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "cycle5",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "fifth",
-          "named": true
-        },
-        {
-          "type": "first",
-          "named": true
-        },
-        {
-          "type": "fourth",
-          "named": true
-        },
-        {
-          "type": "second",
-          "named": true
-        },
-        {
-          "type": "third",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "cycle6",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "fifth",
-          "named": true
-        },
-        {
-          "type": "first",
-          "named": true
-        },
-        {
-          "type": "fourth",
-          "named": true
-        },
-        {
-          "type": "second",
-          "named": true
-        },
-        {
-          "type": "sixth",
-          "named": true
-        },
-        {
-          "type": "third",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "cycle7",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "fifth",
-          "named": true
-        },
-        {
-          "type": "first",
-          "named": true
-        },
-        {
-          "type": "fourth",
-          "named": true
-        },
-        {
-          "type": "second",
-          "named": true
-        },
-        {
-          "type": "seventh",
-          "named": true
-        },
-        {
-          "type": "sixth",
-          "named": true
-        },
-        {
-          "type": "third",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "fifth",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "first",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "float",
     "named": true,
     "fields": {}
   },
   {
     "type": "fourth",
     "named": true,
-    "fields": {}
-  },
-  {
-    "type": "remainder",
-    "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "fifth",
+          "type": "boolean",
           "named": true
         },
         {
-          "type": "first",
+          "type": "float",
           "named": true
         },
         {
-          "type": "fourth",
+          "type": "number",
           "named": true
         },
         {
-          "type": "second",
-          "named": true
-        },
-        {
-          "type": "seventh",
-          "named": true
-        },
-        {
-          "type": "sixth",
-          "named": true
-        },
-        {
-          "type": "third",
+          "type": "text",
           "named": true
         }
       ]
     }
+  },
+  {
+    "type": "number",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "row",
@@ -264,38 +117,34 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
-          "type": "cycle",
+          "type": "fifth",
           "named": true
         },
         {
-          "type": "cycle2",
+          "type": "first",
           "named": true
         },
         {
-          "type": "cycle3",
+          "type": "fourth",
           "named": true
         },
         {
-          "type": "cycle4",
+          "type": "second",
           "named": true
         },
         {
-          "type": "cycle5",
+          "type": "seventh",
           "named": true
         },
         {
-          "type": "cycle6",
+          "type": "sixth",
           "named": true
         },
         {
-          "type": "cycle7",
-          "named": true
-        },
-        {
-          "type": "remainder",
+          "type": "third",
           "named": true
         }
       ]
@@ -304,22 +153,110 @@
   {
     "type": "second",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "seventh",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "sixth",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "third",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "boolean",
+          "named": true
+        },
+        {
+          "type": "float",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "\n",
@@ -331,6 +268,18 @@
   },
   {
     "type": ";",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "text",
+    "named": true
+  },
+  {
+    "type": "true",
     "named": false
   },
   {
