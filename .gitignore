@@ -11,11 +11,6 @@ package-lock.json
 *.dll
 
 
-# Tree-sitter generated files
-/src/grammar.json
-/src/node-types.json
-/src/parser.c
-/src/tree_sitter/
 
 # OS generated files
 .DS_Store
